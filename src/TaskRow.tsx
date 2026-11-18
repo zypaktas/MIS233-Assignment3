@@ -1,14 +1,28 @@
 import type { Task } from './taskReducer'
 
-type TaskRowProps = { task: Task; onNext: () => void; onDelete: () => void }
+type TaskRowProps = {
+  task: Task
+  onNext: () => void
+  onDelete: () => void
+}
+
+const STATUS_LABELS: Record<Task['status'], string> = {
+  todo: 'To do',
+  'in-progress': 'In progress',
+  done: 'Done',
+}
 
 export default function TaskRow({ task, onNext, onDelete }: TaskRowProps) {
   return (
-    <li style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-      <span style={{ flex: 1 }}>{task.title}</span>
-      <em>{task.status}</em>
-      <button onClick={onNext}>Next</button>
-      <button onClick={onDelete}>Delete</button>
+    <li className="task-row">
+      <span className="task-title">{task.title}</span>
+      <span className={`status status-${task.status}`}>{STATUS_LABELS[task.status]}</span>
+      <button className="button button-secondary" type="button" onClick={onNext}>
+        Next <span aria-hidden="true">→</span>
+      </button>
+      <button className="button button-quiet" type="button" onClick={onDelete}>
+        Delete
+      </button>
     </li>
   )
 }
