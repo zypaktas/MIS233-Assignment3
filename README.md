@@ -52,8 +52,7 @@ Keeping the filter inside the reducer state makes the selected filter part of th
 
 ## Bonus 4: Git repository
 
-**Repository link:** [ADD YOUR PUBLIC OR INSTRUCTOR-ACCESSIBLE GITHUB/GITLAB URL]
-
+**Repository link:** https://github.com/zypaktas/MIS233-Assignment3
 Create the repository, push the project, give the instructor access as instructed in Moodle, and make at least five meaningful commits. Include the `screenshots/` folder in the repository.
 
 ## Submission checklist
