@@ -39,4 +39,11 @@ describe('countByFilter', () => {
       all: 3, todo: 2, 'in-progress': 1, done: 0,
     })
   })
+
+  it('does not modify the original task array', () => {
+    const original = structuredClone(tasks)
+    filterTasks(tasks, 'done')
+    countByFilter(tasks)
+    expect(tasks).toEqual(original)
+  })
 })

@@ -82,4 +82,25 @@ describe('taskReducer', () => {
     const original = stateWith([first])
     expect(taskReducer(original, { type: 'clearDone' })).toBe(original)
   })
+
+  it('handles clearDone on an empty task list', () => {
+    expect(taskReducer(initialState, { type: 'clearDone' })).toBe(initialState)
+  })
+
+  it('preserves the selected filter when undoing a task change', () => {
+    const filtered = { ...stateWith([first]), filter: 'todo' as const }
+    const advanced = taskReducer(filtered, { type: 'advance', id: '1' })
+    const undone = taskReducer(advanced, { type: 'undo' })
+    expect(undone.filter).toBe('todo')
+    expect(undone.tasks).toEqual([first])
+  })
+
+  it('creates new task arrays and task objects when advancing', () => {
+    const original = stateWith([first])
+    const result = taskReducer(original, { type: 'advance', id: '1' })
+    expect(result).not.toBe(original)
+    expect(result.tasks).not.toBe(original.tasks)
+    expect(result.tasks[0]).not.toBe(original.tasks[0])
+    expect(original.tasks[0]).toEqual(first)
+  })
 })
