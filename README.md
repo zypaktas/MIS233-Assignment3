@@ -26,7 +26,7 @@ npm test
 - `src/App.tsx` — owns the state with `useReducer` and passes data/actions to child components.
 - `src/TaskRow.tsx` — displays one task and its actions.
 - `src/*.test.ts` — Vitest tests for the reducer and filter functions.
-- `screenshots/` — the four required filter screenshots.
+- `screenshots/` — instructions and destination for the four required filter screenshots.
 
 ## Required features
 
@@ -40,7 +40,7 @@ The state contains `tasks`, `filter` and `past`. The `past` field stores earlier
 
 Vitest tests cover every reducer action, status cycling, undo, immutability, unknown task IDs, empty lists, filtering and counts. Run them with `npm test`.
 
-After running `npm test`, paste the actual terminal output here before submitting (the expected result is that both test files pass).
+**Verification still required on the submission computer:** run `npm test` and paste its actual terminal output here. Do not submit an invented test transcript. The test suite is configured to run both reducer and filter test files.
 
 ## Bonus 3: Explain your reducer in your own words
 
@@ -59,7 +59,7 @@ Create the repository, push the project, give the instructor access as instructe
 ## Submission checklist
 
 - [x] Student name and number are included above and in `src/taskReducer.ts`.
-- [ ] Add `all.png`, `todo.png`, `in-progress.png` and `done.png` to `screenshots/`.
+- [ ] Capture the running app and add `all.png`, `todo.png`, `in-progress.png` and `done.png` to `screenshots/` (see `screenshots/README.md`).
 - [ ] Add your Git repository URL and verify the instructor has access if claiming Bonus 4.
 - [ ] Run `npm run build` and `npm test` successfully.
 - [ ] Zip the `assignment3` folder without `node_modules/` or `dist/`.
