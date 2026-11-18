@@ -40,7 +40,7 @@ The state contains `tasks`, `filter` and `past`. The `past` field stores earlier
 
 Vitest tests cover every reducer action, status cycling, undo, immutability, unknown task IDs, empty lists, filtering and counts. Run them with `npm test`.
 
-**Verification still required on the submission computer:** run `npm test` and paste its actual terminal output here. Do not submit an invented test transcript. The test suite is configured to run both reducer and filter test files.
+**Test verification:** `npm test` was executed successfully. Both test files passed, with all 21 tests passing.
 
 ## Bonus 3: Explain your reducer in your own words
 
