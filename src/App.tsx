@@ -1,3 +1,4 @@
+import './style.css'
 import { useReducer } from 'react'
 import type { Dispatch, FormEvent } from 'react'
 import { taskReducer, initialState, type Action, type Task } from './taskReducer'
